@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use("/api/comments/", mailController.sendEmail);
 
-app.get("/", (req, res) => res.send("Tyrese WebSite Backend!"));
+app.get("/", (req, res) => res.send("Tyrese Personal WebSite Backend!"));
 
 app.listen(process.env.PORT, () =>
   console.log(`Server running on port ${process.env.PORT}`)
