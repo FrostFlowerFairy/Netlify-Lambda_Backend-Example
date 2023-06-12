@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use(cors());
-app.use("/api/comments/", mailController.sendEmail);
+app.use("/api/contact", mailController.sendEmail);
 
 app.get("/", (req, res) => res.send("Tyrese Personal WebSite Backend!"));
 
