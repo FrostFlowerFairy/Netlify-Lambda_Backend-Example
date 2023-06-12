@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
 const cors = require("cors");
-import mailController from "./mailController";
+const mailController = require("./mailController");
 
 dotenv.config();
 
