@@ -26,7 +26,7 @@ exports.sendEmail = (req, res) => {
     (err, info) => {
       if (err) {
         console.error(err);
-        res.status(500).send("Error sending email");
+        res.status(500).send(err);
       } else {
         console.log(info);
         res.send("Email sent successfully");
