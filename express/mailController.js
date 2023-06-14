@@ -2,19 +2,18 @@ const nodemailer = require("nodemailer");
 
 // create a transporter object using your email service provider's SMTP settings
 const transporter = nodemailer.createTransport({
-  host: "mtp.gmail.com",
+  host: "34.22.18.62",
   port: 587,
   secure: false,
   auth: {
     user: process.env.EMAIL_ADDRESS,
-    pass: "your-email-password",
+    pass: process.env.EMAIL_PASSWORD,
   },
 });
 
 // send an email
 exports.sendEmail = (req, res) => {
   const { name, to, email, comment } = req.body;
-  console.log(req.body);
 
   transporter.sendMail(
     {
