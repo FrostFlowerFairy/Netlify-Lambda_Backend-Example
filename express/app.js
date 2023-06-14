@@ -16,15 +16,16 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(morgan("dev"));
 
-app.post("/api/contact", mailController.sendEmail);
-app.post("/.netlify/functions/api/contact", mailController.sendEmail);
+// app.post("/api/contact", mailController.sendEmail);
+app.post("/.netlify/functions/app/api/contact", mailController.sendEmail);
 
-app.get("/api/contact", (req, res) => res.send("/api/contact"));
-app.get("/.netlify/functions/api/contact", (req, res) =>
-  res.send("/.netlify/functions/api/contact")
+// app.get("/api/contact", (req, res) => res.send("/api/contact"));
+app.get("/.netlify/functions/app/api/contact", (req, res) =>
+  res.send("/.netlify/functions/app/api/contact")
 );
+app.use("/", (req, res) => res.sendFile(path.join(__dirname, "../index.html")));
 
-app.get("/", (req, res) => res.send("Tyrese Personal WebSite Backend!"));
+// app.get("/", (req, res) => res.send("Tyrese Personal WebSite Backend!"));
 
 module.exports = app;
 module.exports.handler = serverless(app);
