@@ -17,5 +17,6 @@ app.use("/api/contact", mailController.sendEmail);
 
 app.get("/", (req, res) => res.send("Tyrese Personal WebSite Backend!"));
 
-module.exports = app;
-exports.handler = serverless(app);
+// module.exports = app;
+// exports.handler = serverless(app);
+export const handler = serverless(app);

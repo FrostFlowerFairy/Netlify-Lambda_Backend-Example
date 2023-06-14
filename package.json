@@ -4,13 +4,14 @@
   "description": "",
   "scripts": {
     "dev": "nodemon index.js",
-    "start": "node app.js"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "Tyrese",
   "license": "ISC",
   "dependencies": {
     "@netlify/functions": "^1.6.0",
+    "@types/express": "^4.17.17",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
