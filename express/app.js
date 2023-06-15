@@ -15,7 +15,7 @@ app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.post("/api/contact", mailController.sendEmail);
-app.get("/", (req, res) => res.send("Tyrese Personal WebSite Backend!"));
+app.get("/", (req, res) => res.send("Tyrese Personal Website Backend!"));
 
 module.exports = app;
 module.exports.handler = serverless(app);
