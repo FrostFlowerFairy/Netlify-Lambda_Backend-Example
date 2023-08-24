@@ -13,13 +13,13 @@ const transporter = nodemailer.createTransport({
 
 // send an email
 exports.sendEmail = (req, res) => {
-  const { name, to, email, comment } = req.body;
+  const { name, mailTo, email, comment } = req.body;
 
   transporter.sendMail(
     {
       from: email,
       to: process.env.EMAIL_ADDRESS,
-      subject: `💖 to ${to} from ${name} via personal website 💖`,
+      subject: `💖 to ${mailTo} from ${name} via personal website 💖`,
       text: comment,
     },
     (err, info) => {
